@@ -1,0 +1,2 @@
+SHIPPING = 10
+PRICE = 10

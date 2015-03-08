@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<!-- app/views/orders/show.html.erb -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SLURM - We're too lazy to come up with a slogan!</title>
+</head>
+<body>
+    <div id="main-container" class="container">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @order.amount %>
-</p>
+        <p>
+          <strong>Name:</strong>
+          <%= @order.name %>
+        </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+        <p>
+          <strong>Amount:</strong>
+          <%= @order.amount %>
+        </p>
+
+        <%= link_to 'Edit', edit_order_path(@order) %> |
+        <%= link_to 'Back', orders_path %>
+    </div>
+</body>
+</html>

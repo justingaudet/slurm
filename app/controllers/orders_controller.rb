@@ -26,6 +26,9 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
+    # add cost to the db defined by our price and shipping costs
+    @order.cost = (order_params[:amount].to_i * :PRICE + :SHIPPING)
+
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails slurm: development" uuid="a63d1d68-51f0-4eb5-ad64-252826f61885">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails slurm: test" uuid="ddf4dd0d-e78c-4576-abd9-a6e768b08f5d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails slurm: production" uuid="f1de0a15-a154-4d31-9cb1-4128030e3ead">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
