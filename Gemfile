@@ -36,6 +36,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.2'
 # autoprefixer gem for adding proper vendor prefixes to CSS components
 gem 'autoprefixer-rails'
+# pusher gem for real-time application updates
+gem 'pusher', '~> 0.14.4'
 
 
 group :development, :test do
