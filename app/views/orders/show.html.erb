@@ -11,13 +11,18 @@
         <p id="notice"><%= notice %></p>
 
         <p>
-          <strong>Name:</strong>
-          <%= @order.name %>
+            <strong>Name:</strong>
+            <%= @order.name %>
         </p>
 
         <p>
-          <strong>Amount:</strong>
-          <%= @order.amount %>
+            <strong>Amount:</strong>
+            <%= @order.amount %>
+        </p>
+
+        <p>
+            <strong>Shipping to: </strong>
+            <%= @order.city %>, <%= @order.country %>
         </p>
 
         <%= link_to 'Edit', edit_order_path(@order) %> |

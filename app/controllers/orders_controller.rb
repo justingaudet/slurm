@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
     @price = CONSTANTS::PRICE
     @shipping = CONSTANTS::SHIPPING
     @order.cost = (order_params[:amount].to_i * @price.to_i + @shipping.to_i)
+    #@order.will_ship_by =
 
     respond_to do |format|
       if @order.save
@@ -48,6 +49,8 @@ class OrdersController < ApplicationController
         Pusher['sales_channel'].trigger('order_num_event', {message: Order.all.size})
         Pusher['sales_channel'].trigger('order_cost_event', {message: Order.sum(:cost)})
         Pusher['sales_channel'].trigger('order_sale_event', {message: Order.sum(:amount)})
+        Pusher['sales_channel'].trigger('order_latest_name_event', {message: Order.last(:name)})
+        Pusher['sales_channel'].trigger('order_latest_num_event', {message: Order.last(:amount)})
 
       else
         # else render error page
@@ -89,6 +92,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :amount)
+      params.require(:order).permit(:name, :amount, :city, :country)
     end
 end

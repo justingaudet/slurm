@@ -18,6 +18,12 @@
       channel.bind('order_sale_event', function(data) {
           document.getElementById("total_sales").innerHTML = data.message;
       });
+      channel.bind('order_latest_name_event', function(data) {
+          document.getElementById("latest_name").innerHTML = data.message;
+      });
+      channel.bind('order_latest_num_event', function(data) {
+          document.getElementById("latest_sum").innerHTML = data.message;
+      });
 
   </script>
 
@@ -34,12 +40,22 @@
         To see or make an order, head over to our <%= link_to 'orders page', orders_path %>.
       </div>
 
+      <br /> <br />
+
       <div class="col-xs-9">
         There are currently <div id="total_orders" style="display: inline"><%= @init_orders %></div> orders with <div id="total_sales" style="display: inline"><%= @init_sales %></div> Slurms sold.
       </div>
 
       <div class="col-xs-9">
         We have currently made $<div id="total_costs" style="display: inline"><%= @init_costs %></div>.
+      </div>
+
+      <br /> <br />
+
+      <div class="col-xs-9">
+        Latest order made by <div id="latest_name" style="display: inline"><%= @init_name %></div>
+        with <div id="latest_sum" style="display: inline"><%= @init_sum %></div>
+        Slurms shipping to <div id="latest_city" style="display: inline"><%= @init_city %>, <%= @init_country %></div>.
       </div>
 
     </div>
