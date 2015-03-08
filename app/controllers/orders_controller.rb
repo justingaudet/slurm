@@ -46,6 +46,8 @@ class OrdersController < ApplicationController
 
         # pusher event for realtime sales js
         Pusher['sales_channel'].trigger('order_num_event', {message: Order.all.size})
+        Pusher['sales_channel'].trigger('order_cost_event', {message: Order.sum(:cost)})
+        Pusher['sales_channel'].trigger('order_sale_event', {message: Order.sum(:amount)})
 
       else
         # else render error page

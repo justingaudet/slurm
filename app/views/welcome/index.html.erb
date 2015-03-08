@@ -7,9 +7,18 @@
   <script type="text/javascript">
       var pusher = new Pusher('63a00516bd7a894567e2');
       var channel = pusher.subscribe('sales_channel');
+
+      // update functions for realtime pusher data
       channel.bind('order_num_event', function(data) {
+          document.getElementById("total_orders").innerHTML = data.message;
+      });
+      channel.bind('order_cost_event', function(data) {
+          document.getElementById("total_costs").innerHTML = data.message;
+      });
+      channel.bind('order_sale_event', function(data) {
           document.getElementById("total_sales").innerHTML = data.message;
       });
+
   </script>
 
   <title>SLURM - We're too lazy to come up with a slogan!</title>
@@ -26,11 +35,11 @@
       </div>
 
       <div class="col-xs-9">
-        There are currently <div id="total_sales" style="display: inline"><%= @total_sales %></div> orders.
+        There are currently <div id="total_orders" style="display: inline"><%= @init_orders %></div> orders with <div id="total_sales" style="display: inline"><%= @init_sales %></div> Slurms sold.
       </div>
 
       <div class="col-xs-9">
-        There are currently <%= @total_sales %> orders.
+        We have currently made $<div id="total_costs" style="display: inline"><%= @init_costs %></div>.
       </div>
 
     </div>
