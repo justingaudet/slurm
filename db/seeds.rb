@@ -6,4 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Order.create!(name:'kelly', amount:'2')
+Order.create!(name:'kelly', amount:'2', cost:'20')
+Order.create!(name:'john', amount:'1', cost:'10')
+Order.create!(name:'justin', amount:'64', cost:'640')
+Order.create!(name:'samantha', amount:'1', cost:'10')
+Order.create!(name:'emily', amount:'3', cost:'30')

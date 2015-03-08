@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308040530) do
+ActiveRecord::Schema.define(version: 20150308055853) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "amount",     limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "cost",       limit: 4
   end
 
 end
