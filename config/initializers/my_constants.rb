@@ -1,2 +1,4 @@
-SHIPPING = 10
-PRICE = 10
+module CONSTANTS
+  SHIPPING = 10
+  PRICE = 10
+end

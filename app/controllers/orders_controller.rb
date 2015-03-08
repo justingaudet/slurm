@@ -1,3 +1,9 @@
+require 'pusher'
+
+Pusher.app_id = '110230'
+Pusher.key = '63a00516bd7a894567e2'
+Pusher.secret = 'fb24967344b1999a78e4'
+
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
@@ -27,13 +33,22 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     # add cost to the db defined by our price and shipping costs
-    @order.cost = (order_params[:amount].to_i * :PRICE + :SHIPPING)
+    @price = CONSTANTS::PRICE
+    @shipping = CONSTANTS::SHIPPING
+    @order.cost = (order_params[:amount].to_i * @price.to_i + @shipping.to_i)
 
     respond_to do |format|
       if @order.save
+
+        # successful order creation should render new page
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
+
+        # pusher event for realtime sales js
+        Pusher['sales_channel'].trigger('order_num_event', {message: Order.all.size})
+
       else
+        # else render error page
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
