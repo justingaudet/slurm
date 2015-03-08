@@ -1,2 +1,22 @@
-<h1>HELL0 W0RLD</h1>
-<p>this is a paragraph. Carolyn is so cool</p>
+<!-- app/views/welcome/index.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SLURM - We're too lazy to come up with a slogan!</title>
+</head>
+<body>
+
+<div id="main-container" class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <h3>Slurm Todo</h3>
+    </div>
+    <div class="col-xs-9">
+      <%= link_to 'New Todo', new_todo_path, class: 'btn btn-success' %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

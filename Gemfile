@@ -32,6 +32,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Bootstrap gem for CSS visuals
+gem 'bootstrap-sass', '~> 3.3.2'
+# autoprefixer gem for adding proper vendor prefixes to CSS components
+gem 'autoprefixer-rails'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
