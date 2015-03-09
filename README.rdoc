@@ -14,3 +14,5 @@ To start the application:
     the Rails application.
 
 3. Run the rake task to populate the database as many times as wanted with "rake db:populate" from the terminal
+
+4. Open a web browser and navigate to 0.0.0.0:3000
