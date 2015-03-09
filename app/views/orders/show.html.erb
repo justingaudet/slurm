@@ -21,8 +21,18 @@
         </p>
 
         <p>
+            <strong>Cost:</strong>
+            $<%= @order.amount * CONSTANTS::PRICE + CONSTANTS::SHIPPING %>
+        </p>
+
+        <p>
             <strong>Shipping to: </strong>
             <%= @order.city %>, <%= @order.country %>
+        </p>
+
+        <p>
+            <strong>Estimated arrival date: </strong>
+            <%= @order.will_ship_by %>
         </p>
 
         <%= link_to 'Edit', edit_order_path(@order) %> |
