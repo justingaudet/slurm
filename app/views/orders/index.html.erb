@@ -14,11 +14,11 @@
     <table>
       <thead>
         <tr>
-          <th>Name </th>
+          <th>&nbsp;Name </th>
           <th># of Slurms </th>
           <th>Cost </th>
           <th>Shipping Location </th>
-          <th colspan="5"></th>
+          <th colspan="4"></th>
         </tr>
       </thead>
 
@@ -30,6 +30,7 @@
             <td>$<%= order.cost %></td>
             <td><%= order.city %>, <%= order.country %></td>
             <!-- Remove these if needed, for debugging purposes only -->
+            <td>&nbsp;</td>
             <td><%= link_to 'Show', order %> | </td>
             <td><%= link_to 'Edit', edit_order_path(order) %> | </td>
             <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
