@@ -19,11 +19,13 @@
           document.getElementById("total_sales").innerHTML = data.message;
       });
       channel.bind('order_latest_event', function(data) {
-          var message_arr = data.message.split(";")
-          var name = message_arr[0]
+          var message_arr = data.message.split(";");
+          var name = message_arr[0];
+          var num_ordered = message_arr[1];
+          var locale = message_arr[2];
           document.getElementById("latest_name").innerHTML = name;
-          document.getElementById("latest_num").innerHTML = name;
-          document.getElementById("latest_place").innerHTML = name;
+          document.getElementById("latest_num").innerHTML = num_ordered;
+          document.getElementById("latest_place").innerHTML = locale;
       });
 
   </script>
@@ -51,9 +53,9 @@
       </div>
 
       <div class="col-xs-9">
-        Latest order made by <div id="latest_name" style="display: inline"><%= @init_name %></div>
-        with <div id="latest_num" style="display: inline"><%= @init_num %></div>
-        Slurms shipping to <div id="latest_place" style="display: inline"><%= @init_city %>, <%= @init_country %></div>.
+        Latest order made by: <div id="latest_name" style="display: inline"><%= @init_name %></div>
+        (<div id="latest_num" style="display: inline"><%= @init_num %></div>
+        Slurms) shipping to: <div id="latest_place" style="display: inline"><%= @init_city %>, <%= @init_country %></div>.
       </div>
 
     </div>

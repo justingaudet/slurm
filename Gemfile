@@ -38,6 +38,9 @@ gem 'bootstrap-sass', '~> 3.3.2'
 gem 'autoprefixer-rails'
 # pusher gem for real-time application updates
 gem 'pusher', '~> 0.14.4'
+# faker and populator for randomly populating database
+gem 'faker'
+gem 'populator'
 
 
 group :development, :test do

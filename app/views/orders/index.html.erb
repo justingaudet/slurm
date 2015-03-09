@@ -11,11 +11,11 @@
 
     <h1>Current Orders</h1>
 
-    <table cellpadding="15">
+    <table>
       <thead>
         <tr>
           <th>Name </th>
-          <th>Amount (of Slurms) </th>
+          <th># of Slurms </th>
           <th>Cost </th>
           <th>Shipping Location </th>
           <th colspan="5"></th>
@@ -29,9 +29,11 @@
             <td><%= order.amount %></td>
             <td>$<%= order.cost %></td>
             <td><%= order.city %>, <%= order.country %></td>
-            <td><%= link_to 'Show', order %></td>
-            <td><%= link_to 'Edit', edit_order_path(order) %></td>
+            <!-- Remove these if needed, for debugging purposes only -->
+            <td><%= link_to 'Show', order %> | </td>
+            <td><%= link_to 'Edit', edit_order_path(order) %> | </td>
             <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
           </tr>
         <% end %>
       </tbody>

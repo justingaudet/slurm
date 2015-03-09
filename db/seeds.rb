@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Order.create!(name:'Kelly', amount:'2', cost:'20', city:'Victoria', country:'Canada')
-Order.create!(name:'John', amount:'1', cost:'10', city:'Victoria', country:'Canada')
-Order.create!(name:'Justin', amount:'64', cost:'640', city:'Victoria', country:'Canada')
-Order.create!(name:'Samantha', amount:'1', cost:'10', city:'Victoria', country:'Canada')
-Order.create!(name:'Emily', amount:'3', cost:'30', city:'Victoria', country:'Canada')
+Order.create!(name:'Kelly', amount:'2', cost:'30', city:'Victoria', country:'Canada', will_ship_by: Date.today-8)
+Order.create!(name:'John', amount:'1', cost:'20', city:'Victoria', country:'Canada', will_ship_by: Date.today-8)
+Order.create!(name:'Justin', amount:'64', cost:'650', city:'Victoria', country:'Canada', will_ship_by: Date.today-8)
+Order.create!(name:'Samantha', amount:'1', cost:'20', city:'Victoria', country:'Canada', will_ship_by: Date.today)
+Order.create!(name:'Emily', amount:'3', cost:'40', city:'Victoria', country:'Canada', will_ship_by: Date.today)

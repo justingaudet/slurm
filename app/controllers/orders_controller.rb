@@ -51,9 +51,9 @@ class OrdersController < ApplicationController
         Pusher['sales_channel'].trigger('order_num_event', {message: Order.all.size})
         Pusher['sales_channel'].trigger('order_cost_event', {message: Order.sum(:cost)})
         Pusher['sales_channel'].trigger('order_sale_event', {message: Order.sum(:amount)})
-        Pusher['sales_channel'].trigger('order_latest_event', {message: Order.order("created_at").last.name +
-                                                                Order.order("created_at").last.amount.to_s +
-                                                                Order.order("created_at").last.city +
+        Pusher['sales_channel'].trigger('order_latest_event', {message: Order.order("created_at").last.name + ";" +
+                                                                Order.order("created_at").last.amount.to_s + ";" +
+                                                                Order.order("created_at").last.city + ", " +
                                                                 Order.order("created_at").last.country
                                                                 })
 
